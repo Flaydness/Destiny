@@ -13,6 +13,7 @@
 		11EFE0332987D505005958A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EFE0312987D505005958A3 /* Main.storyboard */; };
 		11EFE0352987D507005958A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EFE0342987D507005958A3 /* Assets.xcassets */; };
 		11EFE0382987D507005958A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EFE0362987D507005958A3 /* LaunchScreen.storyboard */; };
+		11EFE0402987DCFC005958A3 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFE03F2987DCFC005958A3 /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		11EFE0342987D507005958A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11EFE0372987D507005958A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11EFE0392987D507005958A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11EFE03F2987DCFC005958A3 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		11EFE02A2987D505005958A3 /* Destiny */ = {
 			isa = PBXGroup;
 			children = (
+				11EFE0412987DD8C005958A3 /* Model */,
 				11EFE02B2987D505005958A3 /* AppDelegate.swift */,
 				11EFE02D2987D505005958A3 /* SceneDelegate.swift */,
 				11EFE02F2987D505005958A3 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				11EFE0392987D507005958A3 /* Info.plist */,
 			);
 			path = Destiny;
+			sourceTree = "<group>";
+		};
+		11EFE0412987DD8C005958A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11EFE03F2987DCFC005958A3 /* Story.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				11EFE0302987D505005958A3 /* ViewController.swift in Sources */,
 				11EFE02C2987D505005958A3 /* AppDelegate.swift in Sources */,
 				11EFE02E2987D505005958A3 /* SceneDelegate.swift in Sources */,
+				11EFE0402987DCFC005958A3 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
