@@ -53,5 +53,27 @@ struct BrainStory {
                 )
             ]
     
+    mutating func nextStory(userChoice: String) {
+        let currentStory = stories[storyNumber]
+        if userChoice == getFirstChoice() {
+            storyNumber = currentStory.choice1Destination
+        }
+        else {
+            storyNumber = currentStory.choice2Destination
+        }
+    }
+    
+    func getTitle() -> String {
+        return stories[storyNumber].title
+    }
+    
+    func getFirstChoice() -> String {
+        return stories[storyNumber].choice1
+    }
+    
+    func getSecondChoice() -> String {
+        return stories[storyNumber].choice2
+    }
+    
     
 }

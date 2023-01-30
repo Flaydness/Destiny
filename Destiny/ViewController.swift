@@ -10,6 +10,8 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
+    var brainStory = BrainStory()
+    
     private var backgroundImage = UIImage(named: "background")
 
     private lazy var backgroundView: UIImageView = {
@@ -21,7 +23,9 @@ class ViewController: UIViewController {
     
     private lazy var mainLabel: UILabel = {
         var label = UILabel()
-        label.text = "Story"
+        label.text = brainStory.getTitle()
+        label.lineBreakMode = .byClipping
+        label.numberOfLines = 12
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = label.font.withSize(30)
@@ -36,10 +40,12 @@ class ViewController: UIViewController {
         var buttonConfig = UIButton.Configuration.plain()
         buttonConfig.background = buttonBackground
         buttonConfig.cornerStyle = .capsule
-        buttonConfig.title = "First Choice"
+        buttonConfig.title = brainStory.getFirstChoice()
         buttonConfig.baseForegroundColor = .black
         
-        var button = UIButton(configuration: buttonConfig)
+        var button = UIButton(configuration: buttonConfig, primaryAction: UIAction(){ _ in
+            self.userChoice(userChoice: buttonConfig.title!)
+        })
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -52,14 +58,27 @@ class ViewController: UIViewController {
         var buttonConfig = UIButton.Configuration.plain()
         buttonConfig.background = buttonBackground
         buttonConfig.cornerStyle = .capsule
-        buttonConfig.title = "Second Choice"
+        buttonConfig.title = brainStory.getSecondChoice()
         buttonConfig.baseForegroundColor = .black
         
-        var button = UIButton(configuration: buttonConfig)
+        var button = UIButton(configuration: buttonConfig, primaryAction: UIAction(){ _ in
+            self.userChoice(userChoice: buttonConfig.title!)
+        })
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
+    
+    func userChoice(userChoice: String) {
+        brainStory.nextStory(userChoice: userChoice)
+        updateStory()
+    }
+    
+    func updateStory() {
+        mainLabel.text = brainStory.getTitle()
+        bottomButton.setTitle(brainStory.getSecondChoice(), for: .normal)
+        upperButton.setTitle(brainStory.getFirstChoice(), for: .normal)
+    }
 
     func setupView() {
         
